@@ -1,0 +1,78 @@
+p,h2{
+    color: #ebdd9e;
+}
+.box {
+    float: left;
+    padding:15px 15px 25px 20px;
+   }
+ 
+   
+#navigacija a{
+    text-decoration: none;
+    color: #000;
+}
+
+img{
+    margin-left: 345px !important;
+    margin-top: 2px;
+    }
+
+    #ListaPonuda {
+        width: 66%;
+        background-color: #62a52e;
+        border-radius: 20px;
+        margin-left: 265px !important;
+        margin-top: -15px;
+       
+     }
+    
+    #ListaPonuda a:hover {
+      color:#ebdd9e;
+    }
+    
+    #ListaPonuda li{
+    font-size: 20px;
+    font-family: monospace;
+    font-style: italic;
+    display:inline-block;
+    padding: 15px;
+    padding-left: 4px;
+    }
+   
+    #pretragaCena {
+   
+    background-image:url(/assets/img/lupa.jpg);
+    background-repeat: no-repeat; 
+    background-position:right;
+    border-radius: 25px;
+    margin-top: 10px;
+    margin-left: 950px;
+    }
+    #btnPretraga{
+        padding: 10px;
+        border-radius: 5px;        
+
+    }
+    #pretragaSifra {
+    background-image:url(/assets/img/lupa.jpg);
+     background-repeat: no-repeat; 
+        background-position:right;
+        border-radius: 25px;
+        margin-left: 950px;
+        }
+    
+footer p{
+    font-size: 22px;
+    background-color: #62a52e;
+    color:#000;
+    min-width: 200px;
+    text-align: center;
+    
+    }
+    footer{
+        position:absolute;
+        width: 66%;
+        height:60px;
+        margin-left: 265px !important;  
+
+    }

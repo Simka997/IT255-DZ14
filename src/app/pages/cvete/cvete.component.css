@@ -1,0 +1,20 @@
+#levaStranaElem,ul{
+    text-emphasis-color: #fff; 
+    position: relative;
+    text-align: center;
+    
+    margin-left: 550px;
+    text-transform: initial;
+    font-style: italic;
+    }
+#desnaStranaElem,ul{
+    text-align: center;
+    
+    text-transform: initial;
+    font-style: italic;
+    
+    margin-left: 550px;
+
+} #tabla{
+    margin-left: 550px;
+}

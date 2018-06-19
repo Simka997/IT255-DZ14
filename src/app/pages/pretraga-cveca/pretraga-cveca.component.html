@@ -1,0 +1,117 @@
+<app-navbar></app-navbar>
+<div class="container-fluid podnaslov">
+  <p> Pretraga cveca</p>
+</div>
+<div class="container-fluid col-md-8 offset-md-2 mt-3">
+  <label>Unesite sifru: </label>
+  <input type="number" class="form-control" placeholder="Sifra cveta" name="sifra"  [(ngModel)]="sifra">
+  <label>Unesite cenu:</label>
+  <input type="number" class="form-control" placeholder="Cena cveta" name="cena"  [(ngModel)]="cena">
+</div>
+<div class="container-fluid col-md-10 offset-md-1 mt-3">
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Sifra cveta</th>
+        <th scope="col">Naziv</th>
+        <th scope="col">Cena</th>
+        <th scope="col">Opis</th>
+        <th scope="col">Tip cveta</th>
+        <th scope="col">Delete</th> 
+        <th scope="col">View</th> 
+        <th scope="col">Update</th> 
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cvet of cveca | searchpipe: sifra : cena | sortpipe " >
+        <td scope="row">{{ cvet.id}}</td>
+        <th scope="row">{{ cvet.sifra}}</th>
+        <td>{{ cvet.naziv}}</td>
+        <td>{{ cvet.cena}}</td>
+        <td>{{ cvet.opis }}</td>
+        <td>{{ cvet.tip }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="removeCvet($event, cvet.id)">Delete</button> 
+        </td> 
+        <td>
+          <button class="btn btn-info" (click)="viewCvet(cvet.id)">View</button>  
+        </td> 
+        <td>
+          <button class="btn btn-warning" (click)="updateCvet(cvet.id)">Update</button>  
+        </td> 
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="container-fluid podnaslov mt-3">
+  <p> Pretrazi cvet na osnovu ID-a cveta </p>
+</div>
+
+<div class="container-fluid col-md-8 offset-md-2 mt-3">
+  <form role="form" [formGroup]="searchForm">
+    <div class="form-group">
+      <label for="id">ID:</label>
+      <input type="number" class="form-control" formControlName='id'>
+    </div>
+    <button (click)="searchCvet()" class="btn btn-default">Pretraga</button>
+  </form>
+</div>
+
+<div class="container-fluid col-md-10 offset-md-1 mt-3"  *ngIf="check" >
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Sifra cveta</th>
+        <th scope="col">Naziv</th>
+        <th scope="col">Cena</th>
+        <th scope="col">Opis</th>
+        <th scope="col">Tip cveta</th>
+        <th scope="col">Delete</th> 
+        <th scope="col">View</th> 
+        <th scope="col">Update</th>   
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row">{{ data.id}}</td>
+        <th scope="row">{{ data.sifra}}</th>
+        <td>{{ data.naziv}}</td>
+        <td>{{ data.cena}}</td>
+        <td>{{ data.opis }}</td>
+        <td>{{ data.tip }}</td>
+        <td>
+            <button class="btn btn-danger" (click)="removeCvet($event, data.id)">Delete</button> 
+        </td> 
+        <td>
+            <button class="btn btn-info" (click)="viewCvet(data.id)">View</button>  
+        </td> 
+        <td>
+            <button class="btn btn-warning" (click)="updateCvet(data.id)">Update</button>  
+        </td> 
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<div class="container-fluid col-md-8 offset-md-2 mt-3 " *ngIf="!check" style="color:red;font-size:20px;">
+ {{message}}
+</div>
+
+<div class="container-fluid podnaslov mt-3">
+  <p> Izbrisi cvet na osnovu ID-a </p>
+ </div>
+
+<div class="container-fluid col-md-8 offset-md-2 mt-3">
+  <form role="form" [formGroup]="deleteForm">
+      <div class="form-group">
+            <label for="id">ID:</label>
+            <input type="number" class="form-control" formControlName='id'>
+      </div>
+      <button (click)="deleteCvet()" class="btn btn-danger">Izbrisi</button>
+  </form>
+</div>
+

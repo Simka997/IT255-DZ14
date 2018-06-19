@@ -1,0 +1,25 @@
+<div class="collapse navbar-collapse" id="navbarNav">
+  <ul class="navbar-nav">
+     <li class="nav-item link">
+      <a class="nav-link"  routerLink="../" routerLinkActive=" active ac ">Asortiman </a>
+     <li class="nav-item link" *ngIf="isLogin">
+      <a class="nav-link"  routerLink="../sviTipovi" routerLinkActive=" active ac">Tipovi cveca</a>
+    </li>
+    <li class="nav-item link">
+      <a class="nav-link"  routerLink="../onama" routerLinkActive=" active ac">O nama</a>
+    </li>
+    <li class="nav-item link" *ngIf="isLogin">
+      <a class="nav-link"  routerLink="../dodavanjeCveca" routerLinkActive=" active ac">Dodavanje cvetca</a>
+    </li>
+    <li class="nav-item link" *ngIf="!isLogin">
+      <a class="nav-link"  routerLink="../registracija" routerLinkActive=" active ac">Registracija</a>
+    </li>
+    <li class="nav-item link" *ngIf="!isLogin">
+      <a class="nav-link"  routerLink="../login" routerLinkActive=" active ac">Login</a>
+    </li>
+    <li class="nav-item link" *ngIf="isLogin">
+      <a class="nav-link" routerLink="../" (click)="logOut()" routerLinkActive=" ">Logout</a>  
+    </li>
+  </ul>
+</div>
+

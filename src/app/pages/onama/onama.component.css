@@ -1,0 +1,19 @@
+#textOnama{
+    text-align: justify;
+    width:80%;
+}
+
+#centralni{
+    margin:10% 10%;
+    margin-top: 25px;
+    padding-left: 12%;
+}
+#textOnama p{
+    color:#ebdd9e;
+    padding-left: 100px;
+    font-size: 30px;
+    }
+    #textOnama img {
+    margin-left: 130px;
+    
+    }
