@@ -75,7 +75,7 @@ export class UpdateCvetComponent implements OnInit {
     this.http.post('http://localhost:8080/IT255-DZ14/updateCvet.php', data, { headers:headers }).subscribe( data => {
           if(data["_body"].indexOf("error") === -1){
             alert("Cvet uspesno izmenjen");
-            this.router.navigateByUrl('pretraga');
+            this.router.navigateByUrl('pretragacveca');
           }else{
             alert("Greska");
           }

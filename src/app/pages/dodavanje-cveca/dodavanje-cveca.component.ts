@@ -47,7 +47,7 @@ export class DodavanjeCvecaComponent implements OnInit {
       
           if(data["_body"].indexOf("error") === -1){
             alert("Uspesno dodavanje cveta");
-            this._router.navigateByUrl('pretraga');
+            this._router.navigateByUrl('pretragacveca');
           }else{
             alert("Neuspesno dodavanje cveta");
           }
@@ -62,7 +62,7 @@ export class DodavanjeCvecaComponent implements OnInit {
     headers.append('token', localStorage.getItem('token'));
 
     this._http.post('http://localhost:8080/IT255-DZ14/addcvettip.php', data, { headers: headers}).subscribe((result) => {
-      this._router.navigateByUrl('alltipoviCvet');
+      this._router.navigateByUrl('sviTipovi');
    },
     err => {
       const obj = JSON.parse(err._body);
